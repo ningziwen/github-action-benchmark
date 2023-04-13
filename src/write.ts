@@ -475,7 +475,7 @@ async function writeBenchmarkToGitHubPages(bench: Benchmark, config: Config): Pr
         await git.cmd([], 'switch', ghPagesBranch);
     }
     try {
-        return await writeBenchmarkToGitHubPagesWithRetry(bench, config, 10);
+        return await writeBenchmarkToGitHubPagesWithRetry(bench, config, 1);
     } finally {
         if (!ghRepository) {
             // `git switch` does not work for backing to detached head
